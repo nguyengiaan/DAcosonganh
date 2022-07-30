@@ -12,7 +12,8 @@ using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
 using Excel = Microsoft.Office.Interop.Excel;
-
+using System.Configuration;
+using frmlogin.Class;
 
 namespace frmlogin
 {
@@ -21,8 +22,7 @@ namespace frmlogin
 
         SqlConnection connection;
         SqlCommand command;
-        
-        string str = @"Data Source=DESKTOP-PGHJH2J\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Security=True";
+        string s = ConfigurationManager.ConnectionStrings["frmlogin.Properties.Settings.Setting"].ConnectionString;
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 
@@ -49,7 +49,7 @@ namespace frmlogin
         private void frmKHACHHANG_Load(object sender, EventArgs e)
         {
             Lockcontrol();
-            connection = new SqlConnection(str);
+            connection = new SqlConnection(s);
             connection.Open();
             LoadData();
 
@@ -77,43 +77,42 @@ namespace frmlogin
 
 
         
-        public bool checkData()
+        public void checkData()
         {
-            if (string.IsNullOrEmpty(txtMAKH.Text))
+            if (txtMAKH.Text=="")
             {
                 MessageBox.Show("Kiểm tra lại Mã khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtMAKH.Focus();
-                return false;
+                return;
             }
 
-            if (string.IsNullOrEmpty(txtTENKH.Text))
+            if (txtTENKH.Text=="")
             {
                 MessageBox.Show("Kiểm tra lại Tên khách hàng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtTENKH.Focus();
-                return false;
+                return;
             }
 
-            if (string.IsNullOrEmpty(txtDIACHI.Text))
+            if (txtDIACHI.Text=="")
             {
                 MessageBox.Show("Kiểm tra lại Địa chỉ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtDIACHI.Focus();
-                return false;
+                return;
             }
-            if (string.IsNullOrEmpty(txtSDT.Text))
+            if (txtSDT.Text=="")
             {
                 MessageBox.Show("Kiểm tra lại số điện thoại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtSDT.Focus();
-                return false;
+                return;
             }
-            if (string.IsNullOrEmpty(txtEMAIL.Text))
+            if (txtEMAIL.Text=="")
             {
                 MessageBox.Show("Kiểm tra lại Email", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtEMAIL.Focus();
-                return false;
+                return;
             }
-            return true;
         }
-        
+
 
         /*
         public class TBLKHACHHANG
@@ -129,32 +128,26 @@ namespace frmlogin
         TBLKHACHHANG KH = new TBLKHACHHANG();
         */
 
-     void btnTHEM_Click(object sender, EventArgs e)
+        void btnTHEM_Click(object sender, EventArgs e)
         {
-          
-                command = connection.CreateCommand();
-
-
-                command.CommandText = "INSERT INTO KHACHHANG VALUES ('" + txtMAKH.Text + "',N'" + txtTENKH.Text + "',N'" + txtDIACHI.Text + "',N'" + txtSDT.Text + "',N'" + txtEMAIL.Text + "')";
-
-            
             checkData();
-            command.ExecuteNonQuery();
-               
-            LoadData();
-            MessageBox.Show("Đã lưu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-            txtDIACHI.Text = "";
-            txtEMAIL.Text = "";
-            txtMAKH.Text = "";
-            txtSDT.Text = "";
-            txtTENKH.Text = "";
-
-
-
-
-
+            try
+            { 
+               command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO KHACHHANG VALUES ('" + txtMAKH.Text + "',N'" + txtTENKH.Text + "',N'" + txtDIACHI.Text + "',N'" + txtSDT.Text + "',N'" + txtEMAIL.Text + "')";
+                command.ExecuteNonQuery();
+                LoadData();
+                MessageBox.Show("Đã lưu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtDIACHI.Text = "";
+                txtEMAIL.Text = "";
+                txtMAKH.Text = "";
+                txtSDT.Text = "";
+                txtTENKH.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
@@ -192,10 +185,6 @@ namespace frmlogin
         private void btnXOA_Click(object sender, EventArgs e)
         {
             
-           
-            
-
-
             command = connection.CreateCommand();
             command.CommandText = "delete from KHACHHANG WHERE MAKH = '"+txtMAKH.Text+"' " ;
             command.ExecuteNonQuery();
@@ -336,6 +325,11 @@ namespace frmlogin
             txtDIACHI.Text = dataGridView_KHACHHANG.Rows[i].Cells[2].Value.ToString();
             txtSDT.Text = dataGridView_KHACHHANG.Rows[i].Cells[3].Value.ToString();
             txtEMAIL.Text = dataGridView_KHACHHANG.Rows[i].Cells[4].Value.ToString();
+
+        }
+
+        private void dataGridView_KHACHHANG_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

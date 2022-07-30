@@ -43,14 +43,20 @@ namespace frmlogin
             con = new SqlConnection(s);
             con.Open();
            SqlCommand  command = new SqlCommand();
-            command.Connection = con;
-            command.CommandText = "INSERT INTO NHANVIEN(MANV,TENNV,DIACHI,SDT,CHUCVU) VALUES (@MANV,@TENNV,@DIACHI,@SDT,@CHUCVU)";
-            command.Parameters.Add("@MANV", txt_manhanvien.Text);
-            command.Parameters.Add("@TENNV", txt_tennhanvien.Text);
-            command.Parameters.Add("@DIACHI", txt_diachi.Text);
-            command.Parameters.Add("@SDT", txt_sodienthoai.Text);
-            command.Parameters.Add("@CHUCVU", txt_chucvu.Text);
-            command.ExecuteNonQuery();
+            try
+            {
+                command.Connection = con;
+                command.CommandText = "INSERT INTO NHANVIEN(MANV,TENNV,DIACHI,SDT,CHUCVU) VALUES (@MANV,@TENNV,@DIACHI,@SDT,@CHUCVU)";
+                command.Parameters.Add("@MANV", txt_manhanvien.Text);
+                command.Parameters.Add("@TENNV", txt_tennhanvien.Text);
+                command.Parameters.Add("@DIACHI", txt_diachi.Text);
+                command.Parameters.Add("@SDT", txt_sodienthoai.Text);
+                command.Parameters.Add("@CHUCVU", txt_chucvu.Text);
+                command.ExecuteNonQuery();
+            }catch(Exception ex )
+            {
+                MessageBox.Show(ex.Message);
+            }
             hienthidulieu();
         }
 

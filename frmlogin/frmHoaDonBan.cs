@@ -65,9 +65,7 @@ namespace frmlogin
         private void LoadInfoHoaDon()
         {
             string str;
- 
             str = "SELECT MANV FROM HOADON WHERE MAHD = N'" + txtMaHDBan.Text + "'";
-           
             cboMaKhach.SelectedValue = Funtions.GetFieldValues(str);
             str = "SELECT TONGTIEN FROM HOADON WHERE MAHD = N'" + txtMaHDBan.Text + "'";
             txtTongTien.Text = Funtions.GetFieldValues(str);
@@ -107,7 +105,7 @@ namespace frmlogin
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string sql;
-            double sl, SLcon, tong, Tongmoi;
+            double sl, SLcon, Tongmoi=0;
         
                 // Mã hóa đơn chưa có, tiến hành lưu các thông tin chung
                 // Mã HDBan được sinh tự động do đó không có trường hợp trùng khóa
@@ -167,11 +165,11 @@ namespace frmlogin
            
             // Cập nhật lại số lượng của mặt hàng vào bảng tblHang
             SLcon = sl - Convert.ToDouble(txtSoLuong.Text);
-            sql = "UPDATE SANPHAM SET SOLUONG =" + SLcon + " WHERE MASP N'" + cboMaHang.SelectedValue + "'";
+            sql = "UPDATE SANPHAM SET SOLUONG =" + SLcon + " WHERE MASP ='" + cboMaHang.Text + "'";
             Funtions.RunSQL(sql);
             // Cập nhật lại tổng tiền cho hóa đơn bán
-            tong = Convert.ToDouble(Funtions.GetFieldValues("SELECT TONGTIEN FROM HOADON WHERE MAHD = N'" + txtMaHDBan.Text + "'"));
-            Tongmoi = tong + Convert.ToDouble(txtThanhTien.Text);
+
+            Tongmoi = Tongmoi+ Convert.ToDouble(txtThanhTien.Text);
             sql = "UPDATE HOADON SET TONGTIEN =" + Tongmoi + " WHERE MAHD = N'" + txtMaHDBan.Text + "'";
             Funtions.RunSQL(sql);
             txtTongTien.Text = Tongmoi.ToString();
@@ -480,6 +478,11 @@ namespace frmlogin
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

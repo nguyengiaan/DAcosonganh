@@ -26,8 +26,8 @@ namespace frmlogin.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PGHJH2J\\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Secur" +
-            "ity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-PGHJH2J\\SQLEXPRESS;Initial Catalog=QUANLYCUAHANG;Integrated S" +
+            "ecurity=True")]
         public string Setting {
             get {
                 return ((string)(this["Setting"]));

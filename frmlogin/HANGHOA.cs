@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.IO;
 using OfficeOpenXml;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Configuration;
 
 namespace frmlogin
 {
@@ -21,7 +22,7 @@ namespace frmlogin
         SqlConnection connection;
         SqlCommand command;
 
-        string str = @"Data Source=DESKTOP-PGHJH2J\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Security=True";
+        string str = ConfigurationManager.ConnectionStrings["frmlogin.Properties.Settings.Setting"].ConnectionString;
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table = new DataTable();
 

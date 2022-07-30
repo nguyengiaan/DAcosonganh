@@ -7,16 +7,18 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.Configuration;
 namespace frmlogin.Class
 {
     class Funtions
     {
-        string s = ConfigurationManager.ConnectionStrings["frmlogin.Properties.Settings.Setting"].ConnectionString;
-         public static SqlConnection con=new SqlConnection(@"Data Source=DESKTOP-PGHJH2J\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Security=True");
-      
+        public static string s = ConfigurationManager.ConnectionStrings["frmlogin.Properties.Settings.Setting"].ConnectionString;
+        public static SqlConnection con=new SqlConnection(s);
+
+
         public static void Connect()
         {
-            con = new SqlConnection(@"Data Source=DESKTOP-PGHJH2J\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Security=True");
+         
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -56,11 +58,11 @@ namespace frmlogin.Class
         }
         public static void RunSQL(string sql)
         {
-            SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-PGHJH2J\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Security=True");
-            con.Open();
+            SqlConnection conn = new SqlConnection(s);
+            conn.Open();
             SqlCommand cmd; //Đối tượng thuộc lớp SqlCommand
             cmd = new SqlCommand();
-            cmd.Connection = con; //Gán kết nối
+            cmd.Connection = conn; //Gán kết nối
             cmd.CommandText = sql; //Gán lệnh SQL
             try
             {
@@ -68,7 +70,7 @@ namespace frmlogin.Class
             }
             catch (Exception ex)
             {
-              //  MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
             cmd.Dispose();//Giải phóng bộ nhớ
             cmd = null;
@@ -84,7 +86,7 @@ namespace frmlogin.Class
         }
         public static string GetFieldValues(string sql)
         {
-           SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-PGHJH2J\SQLEXPRESS;Initial Catalog=QLBANHANG;Integrated Security=True");
+            SqlConnection con = new SqlConnection(s); 
             con.Open();
             string ma = "";
             SqlCommand cmd = new SqlCommand(sql, con);
@@ -98,7 +100,6 @@ namespace frmlogin.Class
         public static int CreateKey()
         {
             int ma = 0;
-         
             SqlDataAdapter dt = new SqlDataAdapter("SELECT * FROM HOADON",con);
             DataTable dta = new DataTable();
             dt.Fill(dta);

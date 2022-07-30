@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKHACHHANG));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnMOKHOA = new System.Windows.Forms.Button();
@@ -80,7 +79,7 @@
             this.panel1.Controls.Add(this.btnTHEM);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1156, 114);
             this.panel1.TabIndex = 0;
@@ -90,7 +89,7 @@
             this.btnMOKHOA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMOKHOA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMOKHOA.Location = new System.Drawing.Point(1060, 11);
-            this.btnMOKHOA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMOKHOA.Margin = new System.Windows.Forms.Padding(4);
             this.btnMOKHOA.Name = "btnMOKHOA";
             this.btnMOKHOA.Size = new System.Drawing.Size(88, 42);
             this.btnMOKHOA.TabIndex = 13;
@@ -103,7 +102,7 @@
             this.btnLAMMOI.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLAMMOI.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLAMMOI.Location = new System.Drawing.Point(1060, 11);
-            this.btnLAMMOI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLAMMOI.Margin = new System.Windows.Forms.Padding(4);
             this.btnLAMMOI.Name = "btnLAMMOI";
             this.btnLAMMOI.Size = new System.Drawing.Size(88, 42);
             this.btnLAMMOI.TabIndex = 15;
@@ -114,7 +113,7 @@
             // txtEMAIL
             // 
             this.txtEMAIL.Location = new System.Drawing.Point(809, 23);
-            this.txtEMAIL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEMAIL.Margin = new System.Windows.Forms.Padding(4);
             this.txtEMAIL.Name = "txtEMAIL";
             this.txtEMAIL.Size = new System.Drawing.Size(177, 23);
             this.txtEMAIL.TabIndex = 5;
@@ -136,7 +135,7 @@
             this.btnXUATEXCEL.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXUATEXCEL.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXUATEXCEL.Location = new System.Drawing.Point(1060, 66);
-            this.btnXUATEXCEL.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXUATEXCEL.Margin = new System.Windows.Forms.Padding(4);
             this.btnXUATEXCEL.Name = "btnXUATEXCEL";
             this.btnXUATEXCEL.Size = new System.Drawing.Size(88, 41);
             this.btnXUATEXCEL.TabIndex = 11;
@@ -147,7 +146,7 @@
             // txtSDT
             // 
             this.txtSDT.Location = new System.Drawing.Point(516, 71);
-            this.txtSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(215, 23);
             this.txtSDT.TabIndex = 4;
@@ -155,7 +154,7 @@
             // txtDIACHI
             // 
             this.txtDIACHI.Location = new System.Drawing.Point(516, 16);
-            this.txtDIACHI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDIACHI.Margin = new System.Windows.Forms.Padding(4);
             this.txtDIACHI.Name = "txtDIACHI";
             this.txtDIACHI.Size = new System.Drawing.Size(215, 23);
             this.txtDIACHI.TabIndex = 3;
@@ -163,7 +162,7 @@
             // txtTENKH
             // 
             this.txtTENKH.Location = new System.Drawing.Point(144, 69);
-            this.txtTENKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTENKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtTENKH.Name = "txtTENKH";
             this.txtTENKH.Size = new System.Drawing.Size(215, 23);
             this.txtTENKH.TabIndex = 2;
@@ -171,7 +170,7 @@
             // txtMAKH
             // 
             this.txtMAKH.Location = new System.Drawing.Point(141, 16);
-            this.txtMAKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMAKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMAKH.Name = "txtMAKH";
             this.txtMAKH.Size = new System.Drawing.Size(215, 23);
             this.txtMAKH.TabIndex = 1;
@@ -229,7 +228,7 @@
             this.btnSUA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSUA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSUA.Location = new System.Drawing.Point(964, 66);
-            this.btnSUA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSUA.Margin = new System.Windows.Forms.Padding(4);
             this.btnSUA.Name = "btnSUA";
             this.btnSUA.Size = new System.Drawing.Size(88, 42);
             this.btnSUA.TabIndex = 2;
@@ -242,7 +241,7 @@
             this.btnXOA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXOA.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXOA.Location = new System.Drawing.Point(867, 66);
-            this.btnXOA.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXOA.Margin = new System.Windows.Forms.Padding(4);
             this.btnXOA.Name = "btnXOA";
             this.btnXOA.Size = new System.Drawing.Size(88, 42);
             this.btnXOA.TabIndex = 1;
@@ -255,7 +254,7 @@
             this.btnTHEM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTHEM.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTHEM.Location = new System.Drawing.Point(768, 66);
-            this.btnTHEM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTHEM.Margin = new System.Windows.Forms.Padding(4);
             this.btnTHEM.Name = "btnTHEM";
             this.btnTHEM.Size = new System.Drawing.Size(88, 42);
             this.btnTHEM.TabIndex = 0;
@@ -268,7 +267,7 @@
             this.panel2.Controls.Add(this.dataGridView_KHACHHANG);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 114);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1156, 257);
             this.panel2.TabIndex = 1;
@@ -283,24 +282,16 @@
             this.DC,
             this.SDT,
             this.EMAIL});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 7.8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView_KHACHHANG.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_KHACHHANG.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_KHACHHANG.GridColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView_KHACHHANG.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView_KHACHHANG.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView_KHACHHANG.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView_KHACHHANG.Name = "dataGridView_KHACHHANG";
             this.dataGridView_KHACHHANG.RowHeadersWidth = 51;
             this.dataGridView_KHACHHANG.Size = new System.Drawing.Size(1156, 257);
             this.dataGridView_KHACHHANG.TabIndex = 0;
             this.dataGridView_KHACHHANG.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_KHACHHANG_CellClick);
-//            this.dataGridView_KHACHHANG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_KHACHHANG_CellContentClick);
+            this.dataGridView_KHACHHANG.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_KHACHHANG_CellContentClick);
             // 
             // MAKH
             // 
@@ -351,7 +342,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("frmKHACHHANG.IconOptions.LargeImage")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmKHACHHANG";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
